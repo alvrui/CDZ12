@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Reglas de visibilidad para M1 (WorldState). Determina qué ve el jugador.",
+  "levels": {
+    "oculto": {
+      "id": 0,
+      "description": "Información completamente oculta. Solo accesible mediante habilidades específicas."
+    },
+    "parcial": {
+      "id": 1,
+      "description": "Información básica. El jugador conoce la existencia pero no detalles."
+    },
+    "completo": {
+      "id": 2,
+      "description": "Información completa. Todos los detalles son visibles."
+    }
+  },
+  "default": "parcial"
+}

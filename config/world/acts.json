@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Actos narrativos para M5 (JornadaDirector). Cada acto agrupa jornadas temáticamente.",
+  "acts": [
+    {
+      "id": "prologo",
+      "name": "Prólogo: La Caída del Imperio",
+      "description": "Eventos previos a 1810 que contextualizan el asedio.",
+      "start_jornada": 1,
+      "end_jornada": 100,
+      "tramos": ["manana", "tarde", "noche"]
+    },
+    {
+      "id": "acto_1",
+      "name": "Acto I: El Asedio Comienza",
+      "description": "Primeras jornadas bajo bloqueo francés. Organización de las Cortes.",
+      "start_jornada": 101,
+      "end_jornada": 400,
+      "tramos": ["manana", "tarde", "noche"]
+    },
+    {
+      "id": "acto_2",
+      "name": "Acto II: Las Cortes en Acción",
+      "description": "Debates constitucionales. Presión externa e interna.",
+      "start_jornada": 401,
+      "end_jornada": 800,
+      "tramos": ["manana", "tarde", "noche"]
+    },
+    {
+      "id": "acto_3",
+      "name": "Acto III: La Constitución",
+      "description": "Promulgación y consecuencias de la Constitución de 1812.",
+      "start_jornada": 801,
+      "end_jornada": 1100,
+      "tramos": ["manana", "tarde", "noche"]
+    },
+    {
+      "id": "acto_4",
+      "name": "Acto IV: Reacción y Contraataque",
+      "description": "Reacción absolutista. Fin del asedio.",
+      "start_jornada": 1101,
+      "end_jornada": 1400,
+      "tramos": ["manana", "tarde", "noche"]
+    },
+    {
+      "id": "epilogo",
+      "name": "Epílogo: El Legado",
+      "description": "Consecuencias a largo plazo. Regreso de Fernando VII.",
+      "start_jornada": 1401,
+      "end_jornada": 1460,
+      "tramos": ["manana", "tarde", "noche"]
+    }
+  ]
+}

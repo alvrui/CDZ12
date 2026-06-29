@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Espacios de Cádiz 1812. Usado por M1 (WorldState) para visibilidad y accesibilidad.",
+  "spaces": [
+    {
+      "id": "oratorio_san_felipe_neri",
+      "name": "Oratorio de San Felipe Neri",
+      "description": "Corazón de las Cortes. Donde se debaten y votan las leyes.",
+      "visibility": 2,
+      "accessibility": {
+        "default": false,
+        "allowed_classes": ["mercantil_elite", "jurista", "clerigo_ilustrado"],
+        "allowed_factions": ["liberales_progresistas", "liberales_moderados", "americanistas"],
+        "min_reputation": 50
+      },
+      "peligrosidad": 10,
+      "information_value": 90,
+      "tags": ["politico", "institucional", "publico"]
+    },
+    {
+      "id": "comisiones_parlamentarias",
+      "name": "Comisiones Parlamentarias",
+      "description": "Donde se redacta el texto real de la Constitución, artículo por artículo.",
+      "visibility": 1,
+      "accessibility": {
+        "default": false,
+        "allowed_classes": ["jurista", "mercantil_elite"],
+        "allowed_factions": ["liberales_progresistas", "liberales_moderados"],
+        "min_reputation": 70
+      },
+      "peligrosidad": 5,
+      "information_value": 100,
+      "tags": ["politico", "legislativo", "restringido"]
+    },
+    {
+      "id": "cafe_apolo",
+      "name": "Café Apolo",
+      "description": "Lugar de encuentro de liberales. Se filtran y amplifican noticias.",
+      "visibility": 2,
+      "accessibility": {
+        "default": true,
+        "allowed_classes": ["mercantil_elite", "jurista", "periodista"],
+        "allowed_factions": ["liberales_progresistas", "liberales_moderados", "americanistas"],
+        "min_reputation": 30
+      },
+      "peligrosidad": 20,
+      "information_value": 80,
+      "tags": ["social", "informal", "liberal"]
+    },
+    {
+      "id": "cafe_orta",
+      "name": "Café Orta",
+      "description": "Lugar de encuentro de moderados y conservadores.",
+      "visibility": 2,
+      "accessibility": {
+        "default": true,
+        "allowed_classes": ["mercantil_elite", "jurista", "clerigo"],
+        "allowed_factions": ["liberales_moderados", "absolutistas_serviles"],
+        "min_reputation": 30
+      },
+      "peligrosidad": 15,
+      "information_value": 75,
+      "tags": ["social", "informal", "moderado"]
+    },
+    {
+      "id": "muelles_aduana",
+      "name": "Muelles y Aduana",
+      "description": "Nodo del comercio atlántico. Fuente de información privilegiada sobre barcos y mercancías.",
+      "visibility": 1,
+      "accessibility": {
+        "default": true,
+        "allowed_classes": ["mercantil_elite", "comerciante"],
+        "allowed_factions": [],
+        "min_reputation": 0
+      },
+      "peligrosidad": 25,
+      "information_value": 85,
+      "tags": ["economico", "comercio", "publico"]
+    },
+    {
+      "id": "calle_nueva_consulado",
+      "name": "Calle Nueva y el Consulado",
+      "description": "Centro financiero donde se mueve el dinero real.",
+      "visibility": 2,
+      "accessibility": {
+        "default": true,
+        "allowed_classes": ["mercantil_elite", "comerciante"],
+        "allowed_factions": [],
+        "min_reputation": 0
+      },
+      "peligrosidad": 10,
+      "information_value": 70,
+      "tags": ["economico", "financiero", "publico"]
+    },
+    {
+      "id": "catedral",
+      "name": "Catedral y red eclesiástica",
+      "description": "Fuente de legitimidad moral y presión doctrinal.",
+      "visibility": 2,
+      "accessibility": {
+        "default": true,
+        "allowed_classes": ["clerigo", "clerigo_ilustrado"],
+        "allowed_factions": ["absolutistas_serviles"],
+        "min_reputation": 0
+      },
+      "peligrosidad": 5,
+      "information_value": 60,
+      "tags": ["religioso", "conservador", "publico"]
+    },
+    {
+      "id": "imprentas",
+      "name": "Imprentas",
+      "description": "Arma de propaganda y escándalo. Donde se imprimen periódicos y panfletos.",
+      "visibility": 1,
+      "accessibility": {
+        "default": false,
+        "allowed_classes": ["periodista"],
+        "allowed_factions": ["liberales_progresistas"],
+        "min_reputation": 40
+      },
+      "peligrosidad": 30,
+      "information_value": 95,
+      "tags": ["informacion", "propaganda", "restringido"]
+    },
+    {
+      "id": "capitania_san_carlos",
+      "name": "Capitanía y barrio de San Carlos",
+      "description": "Territorio militar con sus propias intrigas.",
+      "visibility": 1,
+      "accessibility": {
+        "default": false,
+        "allowed_classes": ["militar"],
+        "allowed_factions": ["absolutistas_serviles"],
+        "min_reputation": 60
+      },
+      "peligrosidad": 40,
+      "information_value": 75,
+      "tags": ["militar", "seguridad", "restringido"]
+    },
+    {
+      "id": "salones_tertulias",
+      "name": "Salones y tertulias",
+      "description": "Donde se negocian alianzas que no pueden ser públicas.",
+      "visibility": 0,
+      "accessibility": {
+        "default": false,
+        "allowed_classes": ["mercantil_elite", "jurista"],
+        "allowed_factions": [],
+        "min_reputation": 80
+      },
+      "peligrosidad": 20,
+      "information_value": 90,
+      "tags": ["social", "secreto", "elite"]
+    },
+    {
+      "id": "barrios_populares",
+      "name": "Barrios populares",
+      "description": "La voz de la calle. Más expuestos a bombardeos y epidemias.",
+      "visibility": 2,
+      "accessibility": {
+        "default": true,
+        "allowed_classes": [],
+        "allowed_factions": [],
+        "min_reputation": 0
+      },
+      "peligrosidad": 50,
+      "information_value": 50,
+      "tags": ["social", "popular", "publico", "peligroso"]
+    }
+  ]
+}

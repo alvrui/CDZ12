@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Plantilla para el personaje protagonista. Usado por M2 (ProtagonistState).",
+  "protagonist_template": {
+    "id": "protagonista",
+    "name": "Protagonista",
+    "description": "Personaje jugable. Se personaliza al inicio de la partida.",
+    "attributes": {
+      "origen_geografico": {
+        "type": "enum",
+        "options": ["gaditano", "peninsular", "americano"],
+        "default": "gaditano",
+        "description": "Origen del personaje. Afecta redes locales y percepción."
+      },
+      "clase_social": {
+        "type": "enum",
+        "options": ["mercantil_elite", "jurista", "comerciante", "militar", "clerigo_ilustrado", "periodista"],
+        "default": "mercantil_elite",
+        "description": "Clase social. Determina acceso a espacios e información."
+      },
+      "oficio": {
+        "type": "enum",
+        "options": ["jurista", "periodista", "comerciante", "militar", "clerigo", "medico"],
+        "default": "jurista",
+        "description": "Oficio. Desbloquea habilidades narrativas únicas."
+      },
+      "adscripcion_politica": {
+        "type": "enum",
+        "options": ["liberal_progresista", "liberal_moderado", "absolutista", "independiente", "americanista"],
+        "default": "liberal_moderado",
+        "description": "Posición política inicial. Puede evolucionar con coste en coherencia."
+      },
+      "temperamento": {
+        "type": "enum",
+        "options": ["retorico", "prudente", "ambicioso", "esceptico", "idealista", "pragmatico"],
+        "default": "prudente",
+        "description": "Modificador narrativo. Activa opciones de diálogo exclusivas."
+      }
+    },
+    "medidores": {
+      "influencia": 50,
+      "relacional": 40,
+      "reputacion": 60,
+      "coherencia": 70,
+      "recursos": 50,
+      "aguante": 60
+    },
+    "relationships": {
+      "liberales_progresistas": 0,
+      "liberales_moderados": 0,
+      "absolutistas_serviles": 0,
+      "americanistas": 0,
+      "independientes_oportunistas": 0
+    },
+    "reputations": {
+      "clero": 50,
+      "mercaderes": 50,
+      "militares": 50,
+      "pueblo": 50,
+      "prensa": 50
+    },
+    "dynamic_position": {
+      "current": "diputado",
+      "possible_evolutions": ["presidente_cortes", "ministro", "exiliado", "prisionero"]
+    },
+    "compromisos": []
+  }
+}

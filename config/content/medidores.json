@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Definición de los 6 medidores del juego. Usado por M3 (Medidores).",
+  "medidores": [
+    {
+      "id": "influencia",
+      "name": "Influencia",
+      "description": "Capacidad para actuar en el tablero parlamentario.",
+      "min": 0,
+      "max": 100,
+      "default": 50,
+      "umbral_bajo": 20,
+      "umbral_alto": 80,
+      "tendencia_default": 0,
+      "decaimiento": 0.5,
+      "tags": ["politico", "parlamentario"]
+    },
+    {
+      "id": "relacional",
+      "name": "Relacional",
+      "description": "Profundidad de la red de contactos.",
+      "min": 0,
+      "max": 100,
+      "default": 40,
+      "umbral_bajo": 25,
+      "umbral_alto": 75,
+      "tendencia_default": 0,
+      "decaimiento": 0.3,
+      "tags": ["social", "redes"]
+    },
+    {
+      "id": "reputacion",
+      "name": "Reputación",
+      "description": "Cómo te perciben los distintos grupos sociales.",
+      "min": 0,
+      "max": 100,
+      "default": 60,
+      "umbral_bajo": 30,
+      "umbral_alto": 85,
+      "tendencia_default": 0,
+      "decaimiento": 0.2,
+      "tags": ["social", "percepcion"]
+    },
+    {
+      "id": "coherencia",
+      "name": "Coherencia",
+      "description": "Consistencia entre lo que dices y lo que haces.",
+      "min": 0,
+      "max": 100,
+      "default": 70,
+      "umbral_bajo": 40,
+      "umbral_alto": 90,
+      "tendencia_default": 0,
+      "decaimiento": 0.1,
+      "tags": ["personal", "moral"]
+    },
+    {
+      "id": "recursos",
+      "name": "Recursos",
+      "description": "Capital material y económico.",
+      "min": 0,
+      "max": 100,
+      "default": 50,
+      "umbral_bajo": 15,
+      "umbral_alto": 85,
+      "tendencia_default": 0,
+      "decaimiento": 0.4,
+      "tags": ["economico", "material"]
+    },
+    {
+      "id": "aguante",
+      "name": "Aguante",
+      "description": "Capacidad para resistir la presión.",
+      "min": 0,
+      "max": 100,
+      "default": 60,
+      "umbral_bajo": 25,
+      "umbral_alto": 80,
+      "tendencia_default": 0,
+      "decaimiento": 0.2,
+      "tags": ["personal", "resistencia"]
+    }
+  ]
+}

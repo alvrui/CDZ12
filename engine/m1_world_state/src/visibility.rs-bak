@@ -1,0 +1,50 @@
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+use super::entities::{SpaceId, FactionId};
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+pub enum VisibilityLevel { Hidden, Partial, Full }
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+pub enum SpaceVisibility { Visible, Hidden, FogOfWar }
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct Visibility {
+    global_level: VisibilityLevel,
+    space_visibilities: HashMap<SpaceId, SpaceVisibility>,
+    faction_visibilities: HashMap<FactionId, VisibilityLevel>,
+}
+
+impl Visibility {
+    pub fn new(global_level: VisibilityLevel) -> Self {
+        Self {
+            global_level,
+            space_visibilities: HashMap::new(),
+            faction_visibilities: HashMap::new(),
+        }
+    }
+    pub fn global_level(&self) -> VisibilityLevel { self.global_level }
+    pub fn set_global_level(&mut self, level: VisibilityLevel) { self.global_level = level; }
+    pub fn get_space_visibility(&self, space_id: &SpaceId) -> Option<SpaceVisibility> {
+        self.space_visibilities.get(space_id).copied()
+    }
+    pub fn set_space_visibility(&mut self, space_id: SpaceId, visibility: SpaceVisibility) {
+        self.space_visibilities.insert(space_id, visibility);
+    }
+    pub fn get_faction_visibility(&self, faction_id: &FactionId) -> Option<VisibilityLevel> {
+        self.faction_visibilities.get(faction_id).copied()
+    }
+    pub fn set_faction_visibility(&mut self, faction_id: FactionId, visibility: VisibilityLevel) {
+        self.faction_visibilities.insert(faction_id, visibility);
+    }
+    pub fn effective_space_visibility(&self, space_id: &SpaceId) -> VisibilityLevel {
+        if matches!(self.global_level, VisibilityLevel::Hidden) {
+            return VisibilityLevel::Hidden;
+        }
+        match self.get_space_visibility(space_id) {
+            Some(SpaceVisibility::Visible) => VisibilityLevel::Full,
+            Some(SpaceVisibility::Hidden) => VisibilityLevel::Hidden,
+            Some(SpaceVisibility::FogOfWar) | None => self.global_level,
+        }
+    }
+}

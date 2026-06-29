@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Facciones de Cádiz 1812. Usado por M1 (WorldState) para relaciones y M4 (EventGenerator) para ponderación.",
+  "factions": [
+    {
+      "id": "liberales_progresistas",
+      "name": "Liberales Progresistas",
+      "description": "Partidarios de reformas radicales y rápidas. Inspirados por ideas ilustradas.",
+      "leaders": ["arguelles", "munoz_torrero", "calatrava"],
+      "initial_strength": 40,
+      "alignment": "progresista",
+      "goals": [
+        "promulgar_constitucion_radical",
+        "abolir_inquisicion",
+        "libertad_prensa_absoluta"
+      ],
+      "relationships": {
+        "liberales_moderados": 70,
+        "absolutistas_serviles": -80,
+        "americanistas": 50,
+        "independientes_oportunistas": 30
+      },
+      "accessible_spaces": ["oratorio_san_felipe_neri", "comisiones_parlamentarias", "cafe_apolo"]
+    },
+    {
+      "id": "liberales_moderados",
+      "name": "Liberales Moderados",
+      "description": "Puente entre facciones. Buscan reformas graduales para evitar fracturas.",
+      "leaders": ["florez_estrada", "martinez_marina"],
+      "initial_strength": 30,
+      "alignment": "centrista",
+      "goals": [
+        "equilibrio_entre_reformas_y_tradicion",
+        "evitar_guerra_civil"
+      ],
+      "relationships": {
+        "liberales_progresistas": 70,
+        "absolutistas_serviles": -60,
+        "americanistas": 40,
+        "independientes_oportunistas": 50
+      },
+      "accessible_spaces": ["oratorio_san_felipe_neri", "comisiones_parlamentarias", "cafe_orta"]
+    },
+    {
+      "id": "absolutistas_serviles",
+      "name": "Absolutistas/Serviles",
+      "description": "Defensores del Antiguo Régimen. Resistentes a cualquier cambio.",
+      "leaders": ["ostolaza", "quevedo", "villanueva"],
+      "initial_strength": 25,
+      "alignment": "conservador",
+      "goals": [
+        "restaurar_monarquia_absoluta",
+        "detener_reformas",
+        "mantener_privilegios_estamentales"
+      ],
+      "relationships": {
+        "liberales_progresistas": -80,
+        "liberales_moderados": -60,
+        "americanistas": -30,
+        "independientes_oportunistas": 20
+      },
+      "accessible_spaces": ["catedral", "capitania_san_carlos"]
+    },
+    {
+      "id": "americanistas",
+      "name": "Americanistas",
+      "description": "Diputados de las colonias americanas. Defienden intereses criollos.",
+      "leaders": ["ramos_arize", "larrainzar", "san_miguel"],
+      "initial_strength": 20,
+      "alignment": "reformista",
+      "goals": [
+        "igualdad_representacion_americana",
+        "libre_comercio_colonias",
+        "autonomia_local"
+      ],
+      "relationships": {
+        "liberales_progresistas": 50,
+        "liberales_moderados": 40,
+        "absolutistas_serviles": -30,
+        "independientes_oportunistas": 10
+      },
+      "accessible_spaces": ["muelles_aduana", "cafe_apolo"]
+    },
+    {
+      "id": "independientes_oportunistas",
+      "name": "Independientes/Oportunistas",
+      "description": "Actores que buscan beneficio personal. Venden su apoyo al mejor postor.",
+      "leaders": [],
+      "initial_strength": 15,
+      "alignment": "neutral",
+      "goals": [
+        "maximizar_beneficio_personal",
+        "mantener_flexibilidad"
+      ],
+      "relationships": {
+        "liberales_progresistas": 30,
+        "liberales_moderados": 50,
+        "absolutistas_serviles": 20,
+        "americanistas": 10
+      },
+      "accessible_spaces": ["calle_nueva_consulado", "muelles_aduana", "salones_tertulias"]
+    }
+  ]
+}

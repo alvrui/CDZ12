@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Configuración global del juego Cádiz 1812. Usado por M1 (WorldState).",
+  "game_title": "Cádiz 1812",
+  "historical_period": {
+    "start": "1805-01-01",
+    "end": "1814-12-31"
+  },
+  "base_currency": "real",
+  "default_visibility": "partial",
+  "initial_polarization": 50,
+  "max_jornadas": 1460,
+  "version": "1.0.0"
+}

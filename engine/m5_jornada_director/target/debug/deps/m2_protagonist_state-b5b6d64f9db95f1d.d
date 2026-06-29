@@ -1,0 +1,13 @@
+/media/alvaro/service/project-stack/CADIZ12/engine/m5_jornada_director/target/debug/deps/m2_protagonist_state-b5b6d64f9db95f1d.d: /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/lib.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/attributes.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/error.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/inventory.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/manager.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/models.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/objectives.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/relationships.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/serialization.rs
+
+/media/alvaro/service/project-stack/CADIZ12/engine/m5_jornada_director/target/debug/deps/libm2_protagonist_state-b5b6d64f9db95f1d.rmeta: /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/lib.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/attributes.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/error.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/inventory.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/manager.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/models.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/objectives.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/relationships.rs /media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/serialization.rs
+
+/media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/lib.rs:
+/media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/attributes.rs:
+/media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/error.rs:
+/media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/inventory.rs:
+/media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/manager.rs:
+/media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/models.rs:
+/media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/objectives.rs:
+/media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/relationships.rs:
+/media/alvaro/service/project-stack/CADIZ12/engine/m2_protagonist_state/src/serialization.rs:

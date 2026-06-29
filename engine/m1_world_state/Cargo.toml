@@ -1,0 +1,54 @@
+[package]
+name = "m1_world_state"
+version = "0.1.0"
+edition = "2021"
+authors = ["Equipo Cadiz 1812"]
+description = "Modulo M1: Estado del Mundo - Motor generico para juegos narrativo-historicos"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["game-engine", "narrative", "historical", "cadiz1812"]
+categories = ["game-development"]
+
+[dependencies]
+# Serializacion
+serde = { version = "1.0", features = ["derive", "rc"] }
+serde_json = { version = "1.0", optional = true }
+serde_yaml = { version = "0.9", optional = true }
+rmp-serde = { version = "1.1", optional = true }
+
+# Validacion
+validator = { version = "0.20.0", features = ["derive"] }
+
+# Errores
+thiserror = "1.0"
+
+# Logging
+log = "0.4"
+tracing = "0.1"
+
+[dev-dependencies]
+# Testing
+mockall = "0.11"
+assert-json-diff = "2.0"  # <-- Corregido: assert-json-diff (con guión)
+regex = "1.9"
+
+[features]
+default = ["json", "yaml", "msgpack"]
+json = ["serde_json"]
+yaml = ["serde_yaml"]
+msgpack = ["rmp-serde"]
+
+[lib]
+name = "m1_world_state"
+path = "src/lib.rs"
+
+[[test]]
+name = "unit_tests"
+path = "tests/unit/mod.rs"
+
+[[test]]
+name = "integration_tests"
+path = "tests/integration/mod.rs"
+
+[build-dependencies]
+regex = "1.9"

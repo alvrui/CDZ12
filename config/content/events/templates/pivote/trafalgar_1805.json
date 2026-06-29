@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Plantilla de evento pivote. Usado por M4 (EventGenerator).",
+  "id": "trafalgar_1805",
+  "name": "La Batalla de Trafalgar",
+  "event_type": "pivote",
+  "family": "militar",
+  "act": "prologo",
+  "tramo": ["manana"],
+  "date": {
+    "start": "1805-10-21",
+    "end": "1805-10-21",
+    "jornada_absoluta": 45
+  },
+  "preconditions": {
+    "world": {
+      "date": "1805-10-21",
+      "polarization": { "min": 30, "max": 70 }
+    },
+    "protagonist": {
+      "origin": ["gaditano", "peninsular"],
+      "class": ["mercantil_elite", "militar"]
+    }
+  },
+  "consequences": {
+    "medidores": {
+      "influencia": { "delta": -5, "tendency": -1 },
+      "aguante": { "delta": -10, "tendency": -2 }
+    },
+    "relations": {
+      "faccion_armada": 15,
+      "faccion_comercio": -5
+    },
+    "world": {
+      "polarization": 10,
+      "etiquetas_activadas": ["crisis_naval", "francia_hegemonica"]
+    }
+  },
+  "texts": {
+    "title": "La Batalla de Trafalgar",
+    "description": "La flota combinada franco-española es derrotada por la armada británica al mando de Nelson. Este desastre naval marca el fin del poder naval español y acelera la crisis del Imperio.",
+    "narrative_weight": 90
+  },
+  "choices": [
+    {
+      "id": "apoyar_resistencia",
+      "text": "Apoyar la resistencia contra Napoleón y fortalecer las defensas de Cádiz.",
+      "consequences": {
+        "medidores": {
+          "coherencia": 10,
+          "reputacion": 15
+        },
+        "relations": {
+          "liberales_progresistas": 20,
+          "absolutistas_serviles": -10
+        }
+      },
+      "required": {
+        "medidores": { "influencia": 30 }
+      }
+    },
+    {
+      "id": "buscar_beneficio",
+      "text": "Buscar oportunidades comerciales en la nueva situación geopolítica.",
+      "consequences": {
+        "medidores": {
+          "recursos": 20,
+          "coherencia": -5
+        },
+        "relations": {
+          "mercantil_elite": 15,
+          "liberales_progresistas": -10
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "historical_date": "1805-10-21",
+    "sources": ["Documento 7", "Biblioteca Histórica"],
+    "tags": ["pivote", "internacional", "militar", "crisis"],
+    "image_id": "trafalgar_1805_img"
+  }
+}

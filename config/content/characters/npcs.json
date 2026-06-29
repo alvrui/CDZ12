@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "PNJs históricos de Cádiz 1812. Usado por M1 (WorldState) y M4 (EventGenerator).",
+  "npcs": [
+    {
+      "id": "arguelles",
+      "name": "Agustina de Aragón",
+      "description": "Heroína de los sitios de Zaragoza. Símbolo de resistencia. Su presencia en Cádiz inspira a los defensores.",
+      "faction": "liberales_progresistas",
+      "clase_social": "pueblo",
+      "oficio": "heroina_popular",
+      "temperamento": "idealista",
+      "medidores": {
+        "influencia": 80,
+        "relacional": 90,
+        "reputacion": 95,
+        "coherencia": 98,
+        "recursos": 30,
+        "aguante": 90
+      },
+      "relationship_with_player": 0,
+      "initial_attitude": 70,
+      "accessible_spaces": ["oratorio_san_felipe_neri", "barrios_populares"],
+      "tags": ["heroico", "simbolo", "inspiracion"]
+    },
+    {
+      "id": "munoz_torrero",
+      "name": "Muñoz Torrero",
+      "description": "Clérigo ilustrado. Uno de los principales impulsores de las reformas liberales en las Cortes.",
+      "faction": "liberales_progresistas",
+      "clase_social": "clerigo_ilustrado",
+      "oficio": "jurista",
+      "temperamento": "retorico",
+      "medidores": {
+        "influencia": 85,
+        "relacional": 75,
+        "reputacion": 80,
+        "coherencia": 85,
+        "recursos": 40,
+        "aguante": 60
+      },
+      "relationship_with_player": 0,
+      "initial_attitude": 60,
+      "accessible_spaces": ["oratorio_san_felipe_neri", "comisiones_parlamentarias"],
+      "tags": ["intelectual", "reformista", "clerigo"]
+    },
+    {
+      "id": "calatrava",
+      "name": "Calatrava",
+      "description": "Militar liberal. Defensor de la soberanía nacional y la Constitución.",
+      "faction": "liberales_progresistas",
+      "clase_social": "militar",
+      "oficio": "militar",
+      "temperamento": "pragmatico",
+      "medidores": {
+        "influencia": 75,
+        "relacional": 65,
+        "reputacion": 70,
+        "coherencia": 80,
+        "recursos": 50,
+        "aguante": 75
+      },
+      "relationship_with_player": 0,
+      "initial_attitude": 50,
+      "accessible_spaces": ["capitania_san_carlos", "oratorio_san_felipe_neri"],
+      "tags": ["militar", "patriota", "constitucionalista"]
+    },
+    {
+      "id": "florez_estrada",
+      "name": "Flórez Estrada",
+      "description": "Liberal moderado. Busca el equilibrio entre reformas y tradición.",
+      "faction": "liberales_moderados",
+      "clase_social": "jurista",
+      "oficio": "jurista",
+      "temperamento": "prudente",
+      "medidores": {
+        "influencia": 70,
+        "relacional": 80,
+        "reputacion": 75,
+        "coherencia": 85,
+        "recursos": 55,
+        "aguante": 65
+      },
+      "relationship_with_player": 0,
+      "initial_attitude": 55,
+      "accessible_spaces": ["oratorio_san_felipe_neri", "cafe_orta"],
+      "tags": ["moderado", "mediador", "jurista"]
+    },
+    {
+      "id": "ostolaza",
+      "name": "Ostolaza",
+      "description": "Absolutista. Defensor del Antiguo Régimen y la monarquía absoluta.",
+      "faction": "absolutistas_serviles",
+      "clase_social": "clerigo",
+      "oficio": "clerigo",
+      "temperamento": "esceptico",
+      "medidores": {
+        "influencia": 60,
+        "relacional": 50,
+        "reputacion": 40,
+        "coherencia": 90,
+        "recursos": 70,
+        "aguante": 80
+      },
+      "relationship_with_player": 0,
+      "initial_attitude": -30,
+      "accessible_spaces": ["catedral", "capitania_san_carlos"],
+      "tags": ["conservador", "tradicionalista", "clerigo"]
+    }
+  ]
+}

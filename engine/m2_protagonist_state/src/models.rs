@@ -1,0 +1,134 @@
+use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct ProtagonistId {
+    pub id: String,
+}
+
+impl ProtagonistId {
+    pub fn new(id: String) -> Self {
+        Self { id }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct Protagonist {
+    pub id: ProtagonistId,
+    pub name: String,
+    pub attributes: Attributes,
+    pub inventory: Inventory,
+    pub relationships: Relationships,
+    pub objectives: Objectives,
+    pub visibilidad: String,
+}
+
+impl Protagonist {
+    pub fn new(
+        id: ProtagonistId,
+        name: String,
+        attributes: Attributes,
+        inventory: Inventory,
+        relationships: Relationships,
+        objectives: Objectives,
+        visibilidad: String,
+    ) -> Self {
+        Self {
+            id,
+            name,
+            attributes,
+            inventory,
+            relationships,
+            objectives,
+            visibilidad,
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct Attributes {
+    pub strength: i32,
+    pub influence: i32,
+    pub resources: i32,
+}
+
+impl Attributes {
+    pub fn new(strength: i32, influence: i32, resources: i32) -> Self {
+        Self {
+            strength,
+            influence,
+            resources,
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct Inventory {
+    pub items: HashMap<String, InventoryItem>,
+}
+
+impl Inventory {
+    pub fn new() -> Self {
+        Self {
+            items: HashMap::new(),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct InventoryItem {
+    pub item_type: String,
+    pub quantity: u32,
+}
+
+impl InventoryItem {
+    pub fn new(item_type: String, quantity: u32) -> Self {
+        Self {
+            item_type,
+            quantity,
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct Relationships {
+    pub factions: HashMap<String, i32>,
+}
+
+impl Relationships {
+    pub fn new() -> Self {
+        Self {
+            factions: HashMap::new(),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct Objectives {
+    pub list: HashMap<String, Objective>,
+}
+
+impl Objectives {
+    pub fn new() -> Self {
+        Self {
+            list: HashMap::new(),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub struct Objective {
+    pub description: String,
+    pub completed: bool,
+    pub progress: u32,
+}
+
+impl Objective {
+    pub fn new(description: String) -> Self {
+        Self {
+            description,
+            completed: false,
+            progress: 0,
+        }
+    }
+}

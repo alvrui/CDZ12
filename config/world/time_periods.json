@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Períodos temporales para M5 (JornadaDirector).",
+  "periods": [
+    {
+      "id": "pre_asedio",
+      "name": "Pre-Asedio",
+      "start": "1805-01-01",
+      "end": "1810-02-05",
+      "description": "Período previo al asedio francés. Tensión creciente."
+    },
+    {
+      "id": "asedio_frances",
+      "name": "Asedio Francés",
+      "start": "1810-02-05",
+      "end": "1812-08-24",
+      "description": "Cádiz sitiada por tropas francesas. Cortes en sesión."
+    },
+    {
+      "id": "post_constitucion",
+      "name": "Post-Constitución",
+      "start": "1812-08-24",
+      "end": "1814-12-31",
+      "description": "Levantamiento del asedio. Reacción absolutista."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "mechanics": [
+    {
+      "id": "riesgo_en_espacio_vigilado",
+      "condition": {
+        "AND": [
+          { "StateEquals": { "key": "espacio.clima", "value": "vigilado" } },
+          { "StateEquals": { "key": "protagonista.visibilidad", "value": "muy_expuesto" } }
+        ]
+      },
+      "effects": [
+        { "action": "set_flag", "target": "espacio.riesgo_alto", "value": true },
+        { "action": "modify_medidor", "target": "protagonista.aguante", "delta": -5 }
+      ]
+    }
+  ]
+}
