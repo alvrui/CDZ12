@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "solicitud_id": "uuid-v4",
+  "timestamp": "2026-06-30T12:00:00Z",
+  "trigger": {
+    "tipo": "pivote_historico",
+    "evento_historico_id": "apertura_cortes_1810",
+    "descripcion": "Las Cortes se inauguran en San Fernando"
+  },
+  "contexto": {
+    "world_state": {
+      "time": {
+        "tramo_id": 2,
+        "acto": "ActoII",
+        "jornada_absoluta": 456,
+        "fecha": "1810-09-24"
+      },
+      "polarization": {"value": 65, "trend": 2},
+      "clima_politico": "efervescente",
+      "etiquetas_mundo": ["cortes_abiertas", "asedio_activo"],
+      "facciones": [
+        {"id": "liberales_progresistas", "strength": 75, "relations": {"absolutistas": -80}},
+        {"id": "absolutistas", "strength": 45, "relations": {"liberales_progresistas": -80}}
+      ],
+      "espacios": [
+        {"id": "hemiciclo", "space_type": "Public", "danger_level": 30, "required_medidores": {"influencia": 50}}
+      ],
+      "crisis_activa": null
+    },
+    "protagonist_state": {
+      "perfil": {
+        "origen_geografico": "gaditano",
+        "clase_social": "hidalguia",
+        "oficio": "jurista",
+        "adscripcion_politica": "liberal_progresista",
+        "temperamento": "retorico"
+      },
+      "medidores": {
+        "influencia": {"valor": 60, "tendencia": 1},
+        "relacional": {"valor": 45, "tendencia": 2},
+        "reputacion": {"valor": 70, "tendencia": -1},
+        "coherencia": {"valor": 85, "tendencia": 0},
+        "recursos": {"valor": 30, "tendencia": -1},
+        "aguante": {"valor": 55, "tendencia": 1}
+      },
+      "posicion_formal": "diputado_suplente",
+      "visibilidad": "figura_reconocible",
+      "compromisos_activos": [
+        {"comp_id": "comp_001", "comp_receptor_id": "liberales_progresistas", "comp_gravedad": 2}
+      ],
+      "relaciones": [
+        {"npc_id": "arguelles", "intensidad": "aliado", "confianza": 4, "deuda": 1}
+      ],
+      "etiquetas_protagonista": ["veterano_bailen", "constitucionalista"]
+    }
+  }
+}

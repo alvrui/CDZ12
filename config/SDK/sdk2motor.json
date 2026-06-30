@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "solicitud_id": "uuid-v4",
+  "cadena_id": "uuid-v4",
+  "timestamp": "2026-06-30T12:00:01Z",
+  "metadata": {
+    "compatibilidad": 4.2,
+    "story_elements_utilizados": [
+      {"categoria": "protagonista", "id": "PROT_001"},
+      {"categoria": "tema", "id": "THEME_001"},
+      {"categoria": "final", "id": "FIN_001"}
+    ],
+    "pnjs_nuevos": [
+      {"npc_id": "npc_nuevo_001", "nombre": "Impresor Anónimo", "faccion": "prensa"}
+    ]
+  },
+  "cadena": {
+    "titulo_id": "cadena_debate_constitucional_titulo",
+    "tono_aplicado": {
+      "estilo": "dramatico",
+      "ritmo": "equilibrado",
+      "violencia": 2,
+      "realismo": 5
+    },
+    "eventos": [
+      {
+        "evento_id": "evt_001",
+        "familia": "A",
+        "titulo_id": "debate_articulo_1_titulo",
+        "descripcion_id": "debate_articulo_1_descripcion",
+        "espacio_id": "hemiciclo",
+        "personajes": [
+          {"npc_id": "arguelles", "rol": "secundario", "dialogo_id": "arguelles_intervencion_001"}
+        ],
+        "opciones": [
+          {
+            "id": "opc_apoyar",
+            "texto_id": "apoyar_propuesta_texto",
+            "condicion": {"medidor": "influencia", "operador": ">=", "valor": 50},
+            "consecuencias": [
+              {"target": "influencia", "delta": 5, "tipo": "inmediata"},
+              {"target": "etiqueta", "target_id": "constitucionalista_activo", "tipo": "inmediata"}
+            ]
+          }
+        ],
+        "coste": {"tiempo_jornada": "medio", "aguante": "bajo"},
+        "atributos_interfaz": {"icono": "debate", "color_tema": "#1a237e"}
+      }
+    ]
+  }
+}
