@@ -1,58 +1,78 @@
 use m4_event_generator::{Effect, EventContext, EventError};
-use std::collections::HashMap;
+use serde_json::Value;
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn test_set_state_effect() {
-        let mut parameters = HashMap::new();
-        parameters.insert("key".to_string(), "value".to_string());
-
-        let effect = Effect::new("set_state".to_string(), parameters);
+    fn test_set_flag_effect() {
+        let effect = Effect {
+            action: "set_flag".to_string(),
+            target: "key".to_string(),
+            value: Some(Value::Bool(true)),
+            delta: None,
+        };
 
         let mut context = EventContext::new();
         assert!(effect.apply(&mut context).is_ok());
-        assert_eq!(context.get("key"), Some(&"value".to_string()));
+        assert_eq!(
+            context.get_path("key"),
+            Some(&Value::Bool(true))
+        );
     }
 
     #[test]
-    fn test_increment_state_effect() {
-        let mut parameters = HashMap::new();
-        parameters.insert("key".to_string(), "10".to_string());
-
-        let effect = Effect::new("increment_state".to_string(), parameters);
+    fn test_modify_medidor_effect() {
+        let effect = Effect {
+            action: "modify_medidor".to_string(),
+            target: "key".to_string(),
+            value: None,
+            delta: Some(5),
+        };
 
         let mut context = EventContext::new();
-        context.set("key".to_string(), "5".to_string());
+        context.set_path("key", Value::from(10)).unwrap();
 
         assert!(effect.apply(&mut context).is_ok());
-        assert_eq!(context.get("key"), Some(&"15".to_string()));
+        assert_eq!(
+            context.get_path("key"),
+            Some(&Value::from(15))
+        );
     }
 
     #[test]
-    fn test_increment_state_effect_new_key() {
-        let mut parameters = HashMap::new();
-        parameters.insert("key".to_string(), "10".to_string());
-
-        let effect = Effect::new("increment_state".to_string(), parameters);
+    fn test_modify_medidor_effect_new_key() {
+        let effect = Effect {
+            action: "modify_medidor".to_string(),
+            target: "key".to_string(),
+            value: None,
+            delta: Some(10),
+        };
 
         let mut context = EventContext::new();
 
         assert!(effect.apply(&mut context).is_ok());
-        assert_eq!(context.get("key"), Some(&"10".to_string()));
+        assert_eq!(
+            context.get_path("key"),
+            Some(&Value::from(10))
+        );
     }
 
     #[test]
     fn test_unknown_effect() {
-        let effect = Effect::new("unknown".to_string(), HashMap::new());
+        let effect = Effect {
+            action: "unknown".to_string(),
+            target: "key".to_string(),
+            value: None,
+            delta: None,
+        };
         let mut context = EventContext::new();
         let result = effect.apply(&mut context);
         assert!(result.is_err());
         assert_eq!(
             result.unwrap_err(),
-            EventError::EffectApplicationError("Unknown effect type: unknown".to_string())
+            EventError::EffectApplicationError("Unknown effect action: unknown".to_string())
         );
     }
 }
