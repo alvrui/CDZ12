@@ -1,7 +1,4 @@
-use m2_protagonist_state::{
-    Attributes, Inventory, InventoryItem, Objective, Objectives, Protagonist, ProtagonistId,
-    Relationships,
-};
+use m2_protagonist_state::models::{Attributes, Inventory, InventoryItem, Objective, Objectives, Protagonist, ProtagonistId, Relationships};
 
 #[cfg(test)]
 mod tests {
@@ -31,6 +28,7 @@ mod tests {
             inventory,
             relationships,
             objectives,
+            "normal".to_string(),
         )
     }
 
