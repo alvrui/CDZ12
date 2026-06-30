@@ -1,26 +1,20 @@
 use m4_event_generator::{Condition, Effect, Event, EventId, EventType};
+use serde_json::Value;
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::collections::HashMap;
 
     #[test]
     fn test_create_event() {
-        let mut conditions = Vec::new();
-        conditions.push(Condition::new(
-            "always_true".to_string(),
-            HashMap::new(),
-        ));
+        let conditions = vec![Condition::AlwaysTrue];
 
-        let mut effects = Vec::new();
-        effects.push(Effect::new(
-            "set_state".to_string(),
-            [("key".to_string(), "value".to_string())]
-                .iter()
-                .cloned()
-                .collect(),
-        ));
+        let effects = vec![Effect {
+            action: "set_flag".to_string(),
+            target: "key".to_string(),
+            value: Some(Value::Bool(true)),
+            delta: None,
+        }];
 
         let event = Event::new(
             EventId::new("event_1".to_string()),
@@ -51,7 +45,7 @@ mod tests {
             1.0,
         );
 
-        event.add_condition(Condition::new("always_true".to_string(), HashMap::new()));
+        event.add_condition(Condition::AlwaysTrue);
         assert_eq!(event.conditions.len(), 1);
     }
 
@@ -67,13 +61,12 @@ mod tests {
             1.0,
         );
 
-        event.add_effect(Effect::new(
-            "set_state".to_string(),
-            [("key".to_string(), "value".to_string())]
-                .iter()
-                .cloned()
-                .collect(),
-        ));
+        event.add_effect(Effect {
+            action: "set_flag".to_string(),
+            target: "key".to_string(),
+            value: Some(Value::Bool(true)),
+            delta: None,
+        });
         assert_eq!(event.effects.len(), 1);
     }
 }
