@@ -1,5 +1,6 @@
-use m4_event_generator::{Condition, EventContext};
-use std::collections::HashMap;
+use m4_event_generator::Condition;
+use m4_event_generator::EventContext;
+use serde_json::Value;
 
 #[cfg(test)]
 mod tests {
@@ -7,59 +8,59 @@ mod tests {
 
     #[test]
     fn test_always_true_condition() {
-        let condition = Condition::new("always_true".to_string(), HashMap::new());
+        let condition = Condition::AlwaysTrue;
         let context = EventContext::new();
         assert!(condition.evaluate(&context));
     }
 
     #[test]
     fn test_state_equals_condition_true() {
-        let mut parameters = HashMap::new();
-        parameters.insert("polarization".to_string(), "50".to_string());
-
-        let condition = Condition::new("state_equals".to_string(), parameters);
+        let condition = Condition::StateEquals {
+            key: "polarization".to_string(),
+            value: "50".to_string(),
+        };
 
         let mut context = EventContext::new();
-        context.set("polarization".to_string(), "50".to_string());
+        context.set_path("polarization", Value::String("50".to_string())).unwrap();
 
         assert!(condition.evaluate(&context));
     }
 
     #[test]
     fn test_state_equals_condition_false() {
-        let mut parameters = HashMap::new();
-        parameters.insert("polarization".to_string(), "50".to_string());
-
-        let condition = Condition::new("state_equals".to_string(), parameters);
+        let condition = Condition::StateEquals {
+            key: "polarization".to_string(),
+            value: "50".to_string(),
+        };
 
         let mut context = EventContext::new();
-        context.set("polarization".to_string(), "30".to_string());
+        context.set_path("polarization", Value::String("30".to_string())).unwrap();
 
         assert!(!condition.evaluate(&context));
     }
 
     #[test]
     fn test_state_greater_than_condition_true() {
-        let mut parameters = HashMap::new();
-        parameters.insert("polarization".to_string(), "50".to_string());
-
-        let condition = Condition::new("state_greater_than".to_string(), parameters);
+        let condition = Condition::StateGreaterThan {
+            key: "polarization".to_string(),
+            threshold: 50,
+        };
 
         let mut context = EventContext::new();
-        context.set("polarization".to_string(), "60".to_string());
+        context.set_path("polarization", Value::from(60)).unwrap();
 
         assert!(condition.evaluate(&context));
     }
 
     #[test]
     fn test_state_greater_than_condition_false() {
-        let mut parameters = HashMap::new();
-        parameters.insert("polarization".to_string(), "50".to_string());
-
-        let condition = Condition::new("state_greater_than".to_string(), parameters);
+        let condition = Condition::StateGreaterThan {
+            key: "polarization".to_string(),
+            threshold: 50,
+        };
 
         let mut context = EventContext::new();
-        context.set("polarization".to_string(), "40".to_string());
+        context.set_path("polarization", Value::from(40)).unwrap();
 
         assert!(!condition.evaluate(&context));
     }
