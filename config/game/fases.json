@@ -2,74 +2,254 @@
   "version": "1.0",
   "actos": [
     {
+      "acto": 0,
+      "nombre": "Preludio: De Trafalgar a Solano",
+      "descripcion": "Período previo al asedio. Cádiz se recupera de Trafalgar y vive la crisis política que lleva al 2 de Mayo y el asesinato de Solano.",
+      "fecha_inicio": "1805-10-22",
+      "fecha_fin": "1808-05-29",
+      "tramos": [
+        {"tramo_id": "manana", "eventos": ["B", "S1", "S5"], "peso": 0.7, "descripcion": "Actividad portuaria y rumores de guerra"},
+        {"tramo_id": "tarde", "eventos": ["B", "C", "S2"], "peso": 0.9, "descripcion": "Reuniones en el Consulado y tertulias"},
+        {"tramo_id": "noche", "eventos": ["C", "F"], "peso": 0.5, "descripcion": "Encuentros discretos en tabernas"}
+      ],
+      "eventos_pivote": [
+        {
+          "evento_id": "batalla_trafalgar_1805",
+          "nombre": "Batalla de Trafalgar",
+          "fecha": "1805-10-22",
+          "descripcion": "Derrota de la flota franco-española. Cádiz queda sembrada de naufragios. Fin del poder naval español.",
+          "impacto": {
+            "etiquetas_mundo": ["trafalgar_ocurrido", "monopolio_debilitado"],
+            "clima_politico": "precrisis"
+          }
+        },
+        {
+          "evento_id": "motin_aranjuez_1808",
+          "nombre": "Motín de Aranjuez",
+          "fecha": "1808-03-19",
+          "descripcion": "Caída de Godoy. Carlos IV abdica en Fernando VII.",
+          "impacto": {
+            "etiquetas_mundo": ["godoy_caido", "crisis_dinastica"],
+            "clima_politico": "normalidad_tensa"
+          }
+        },
+        {
+          "evento_id": "dos_de_mayo_1808",
+          "nombre": "Levantamiento del 2 de Mayo",
+          "fecha": "1808-05-02",
+          "descripcion": "Sublevación en Madrid contra los franceses. Inicio formal de la Guerra de la Independencia.",
+          "impacto": {
+            "etiquetas_mundo": ["guerra_independencia_iniciada"],
+            "clima_politico": "crisis_abierta"
+          }
+        },
+        {
+          "evento_id": "asesinato_solano_1808",
+          "nombre": "Asesinato del General Solano",
+          "fecha": "1808-05-29",
+          "descripcion": "Una turba asalta y asesina al Gobernador de Cádiz, el venezolano Marqués del Socorro. Tensión extrema entre pueblo, militares y Armada.",
+          "impacto": {
+            "etiquetas_mundo": ["solano_asesinado", "inestabilidad_politica"],
+            "clima_politico": "crisis_abierta"
+          }
+        }
+      ],
+      "objetivos": [
+        "Establecer posición inicial en Cádiz",
+        "Comprender el contexto pre-bélico",
+        "Crear redes de contacto básicas"
+      ]
+    },
+    {
       "acto": 1,
       "nombre": "Llegada a Cádiz",
-      "fecha_inicio": "1810-01-01",
+      "descripcion": "El protagonista llega a Cádiz y se familiariza con el tablero político bajo la amenaza inminente del asedio.",
+      "fecha_inicio": "1808-06-01",
       "fecha_fin": "1810-09-23",
       "tramos": [
         {"tramo_id": "manana", "eventos": ["B", "S1", "S5"], "peso": 0.8},
         {"tramo_id": "tarde", "eventos": ["B", "C", "S2"], "peso": 1.0},
         {"tramo_id": "noche", "eventos": ["C", "F", "S4"], "peso": 0.6},
-        {"tramo_id": "sesion_cortes", "eventos": ["A", "S3"], "peso": 1.2, "requiere": ["diputado"]}
-      ]
+        {"tramo_id": "sesion_junta", "eventos": ["A", "S3"], "peso": 1.1, "requiere": ["diputado", "secretario"], "descripcion": "Sesiones de la Junta Central"}
+      ],
+      "eventos_pivote": [
+        {
+          "evento_id": "abdicaciones_bayona_1808",
+          "nombre": "Abdicaciones de Bayona",
+          "fecha": "1808-05-06",
+          "descripcion": "Fernando VII y Carlos IV ceden la Corona a Napoleón. Vacío de legitimidad dinástica.",
+          "impacto": {"etiquetas_mundo": ["juntas_formadas", "vacio_legitimidad"]}
+        },
+        {
+          "evento_id": "jose_i_rey_1808",
+          "nombre": "Napoleón nombra a José I rey de España",
+          "fecha": "1808-06-06",
+          "descripcion": "Los afrancesados lo aceptan; patriotas y Juntas lo rechazan.",
+          "impacto": {"etiquetas_mundo": ["jose_i_nombrado", "fractura_nacional"]}
+        },
+        {
+          "evento_id": "bailen_1808",
+          "nombre": "Batalla de Bailén",
+          "fecha": "1808-07-19",
+          "descripcion": "Primera gran derrota napoleónica. José I abandona Madrid.",
+          "impacto": {"etiquetas_mundo": ["franceses_derrotados"], "clima_politico": "efervescente"}
+        }
+      ],
+      "objetivos": ["Establecer red inicial de relaciones", "Familiarizarse con las facciones", "Definir posición política"]
     },
     {
       "acto": 2,
       "nombre": "El Asedio y los Primeros Debates",
+      "descripcion": "Cádiz bajo asedio francés. Inicio de las Cortes Generales y Extraordinarias.",
       "fecha_inicio": "1810-09-24",
       "fecha_fin": "1811-12-31",
       "tramos": [
-        {"tramo_id": "manana", "eventos": ["B", "D", "E", "S1"], "peso": 0.9},
-        {"tramo_id": "tarde", "eventos": ["A", "B", "C", "S2", "S3"], "peso": 1.1},
-        {"tramo_id": "noche", "eventos": ["C", "F", "S4", "S5"], "peso": 0.7},
-        {"tramo_id": "sesion_cortes", "eventos": ["A", "S3"], "peso": 1.3}
+        {"tramo_id": "manana", "eventos": ["B", "D", "E", "S1"], "peso": 0.9, "descripcion": "Vida bajo bombardeos esporádicos"},
+        {"tramo_id": "tarde", "eventos": ["A", "B", "C", "S2", "S3"], "peso": 1.1, "descripcion": "Reuniones urgentes y debates iniciales"},
+        {"tramo_id": "noche", "eventos": ["C", "F", "S4", "S5"], "peso": 0.7, "descripcion": "Conspiraciones y planes bajo el asedio"},
+        {"tramo_id": "sesion_cortes", "eventos": ["A", "S3"], "peso": 1.3, "requiere": ["diputado", "diputado_suplente"], "descripcion": "Sesiones parlamentarias en el Oratorio de San Felipe Neri"}
       ],
-      "pivotes": ["inicio_asedio_1810", "apertura_cortes_1810", "libertad_imprenta_1810"]
+      "eventos_pivote": [
+        {
+          "evento_id": "inicio_asedio_1810",
+          "nombre": "Inicio del Asedio de Cádiz",
+          "fecha": "1810-02-05",
+          "descripcion": "Tropas del mariscal Víctor llegan ante Cádiz. Comienza el sitio que durará 2 años y medio.",
+          "impacto": {"etiquetas_mundo": ["asedio_activo"], "clima_politico": "crisis_abierta"}
+        },
+        {
+          "evento_id": "apertura_cortes_1810",
+          "nombre": "Apertura de las Cortes Generales y Extraordinarias",
+          "fecha": "1810-09-24",
+          "descripcion": "Inauguración en el Real Teatro de San Fernando. 305 diputados asisten.",
+          "impacto": {"etiquetas_mundo": ["cortes_abiertas", "soberania_nacional"], "clima_politico": "efervescente"}
+        },
+        {
+          "evento_id": "libertad_imprenta_1810",
+          "nombre": "Decreto de Libertad de Imprenta",
+          "fecha": "1810-11-10",
+          "descripcion": "Primer decreto de libertad de prensa en España. Excepción: escritos religiosos.",
+          "impacto": {"etiquetas_mundo": ["prensa_libre"], "clima_politico": "efervescente"}
+        }
+      ],
+      "objetivos": ["Sobrevivir al asedio", "Participar en los primeros debates constitucionales", "Ganar influencia en las Cortes"]
     },
     {
       "acto": 3,
       "nombre": "La Constitución de 1812",
+      "descripcion": "Redacción y promulgación de La Pepa. El momento culminante del proceso liberal gaditano.",
       "fecha_inicio": "1812-01-01",
       "fecha_fin": "1812-08-31",
       "tramos": [
-        {"tramo_id": "manana", "eventos": ["A", "D", "S2"], "peso": 1.0},
-        {"tramo_id": "tarde", "eventos": ["A", "B", "S3"], "peso": 1.2},
-        {"tramo_id": "noche", "eventos": ["C", "F"], "peso": 0.8},
-        {"tramo_id": "sesion_cortes", "eventos": ["A", "S3"], "peso": 1.5}
+        {"tramo_id": "manana", "eventos": ["A", "D", "S2"], "peso": 1.0, "descripcion": "Trabajo en comisiones constitucionales"},
+        {"tramo_id": "tarde", "eventos": ["A", "B", "S3"], "peso": 1.2, "descripcion": "Debates intensos en el hemiciclo"},
+        {"tramo_id": "noche", "eventos": ["C", "F"], "peso": 0.8, "descripcion": "Negociaciones y acuerdos tras las sesiones"},
+        {"tramo_id": "sesion_cortes", "eventos": ["A", "S3"], "peso": 1.5, "requiere": ["diputado", "diputado_suplente"], "descripcion": "Votaciones y discursos clave"}
       ],
-      "pivotes": ["promulgacion_pepa_1812", "levantamiento_asedio_1812"]
+      "eventos_pivote": [
+        {
+          "evento_id": "propuesta_oliveros_1811",
+          "nombre": "Propuesta de Oliveros y Comisión Constitucional",
+          "fecha": "1811-12-01",
+          "descripcion": "Se nombra comisión de 15 miembros para redactar el texto constitucional.",
+          "impacto": {"etiquetas_mundo": ["comision_constitucional_activa"]}
+        },
+        {
+          "evento_id": "promulgacion_pepa_1812",
+          "nombre": "Promulgación de la Constitución de 1812",
+          "fecha": "1812-03-19",
+          "descripcion": "Firmada por 185 diputados en el Oratorio de San Felipe Neri. 384 artículos en 10 títulos.",
+          "impacto": {"etiquetas_mundo": ["constitucion_1812", "liberalismo_triunfante"], "clima_politico": "celebracion_publica"}
+        },
+        {
+          "evento_id": "levantamiento_asedio_1812",
+          "nombre": "Levantamiento del Asedio",
+          "fecha": "1812-08-24",
+          "descripcion": "Tropas del mariscal Víctor se retiran ante el avance de Wellington. Fin de 2 años y medio de sitio.",
+          "impacto": {"etiquetas_mundo": ["asedio_terminado"], "clima_politico": "normalidad_tensa"}
+        }
+      ],
+      "objetivos": ["Contribuir a la redacción de la Constitución", "Defender el proyecto liberal", "Mantener coherencia ideológica"]
     },
     {
       "acto": 4,
       "nombre": "La Epidemia y la Reacción",
+      "descripcion": "Fiebre amarilla azota Cádiz. Primeros signos de reacción absolutista mientras la guerra se decanta a favor de los aliados.",
       "fecha_inicio": "1813-01-01",
       "fecha_fin": "1813-12-31",
       "tramos": [
-        {"tramo_id": "manana", "eventos": ["B", "D", "S1"], "peso": 0.8},
-        {"tramo_id": "tarde", "eventos": ["A", "E", "S2"], "peso": 1.0},
-        {"tramo_id": "noche", "eventos": ["C", "F", "S4"], "peso": 0.9}
+        {"tramo_id": "manana", "eventos": ["B", "D", "S1"], "peso": 0.8, "descripcion": "Intento de normalidad tras el levantamiento del asedio"},
+        {"tramo_id": "tarde", "eventos": ["A", "E", "S2"], "peso": 1.0, "descripcion": "Tensión por la epidemia y debates sobre la Inquisición"},
+        {"tramo_id": "noche", "eventos": ["C", "F", "S4"], "peso": 0.9, "descripcion": "Reuniones secretas de serviles y logias masónicas"}
       ],
-      "pivotes": ["epidemia_fiebre_amarilla_1813", "abolicion_inquisicion_1813"]
+      "eventos_pivote": [
+        {
+          "evento_id": "epidemia_fiebre_amarilla_1813",
+          "nombre": "Epidemia de Fiebre Amarilla",
+          "fecha": "1813-06-01",
+          "descripcion": "Brote en Cádiz. Hospitales colapsados. Mortalidad alta por hacinamiento y falta de higiene.",
+          "impacto": {"etiquetas_mundo": ["epidemia_activa"], "clima_politico": "crisis_abierta"}
+        },
+        {
+          "evento_id": "abolicion_inquisicion_1813",
+          "nombre": "Abolición de la Inquisición",
+          "fecha": "1813-02-22",
+          "descripcion": "Decreto de las Cortes. Primera ruptura institucional abierta entre la Iglesia conservadora y el liberalismo.",
+          "impacto": {"etiquetas_mundo": ["inquisicion_abolida"], "clima_politico": "resaca_crisis"}
+        },
+        {
+          "evento_id": "muerte_power_mejia_1813",
+          "nombre": "Muerte de Power y Mejía por Fiebre Amarilla",
+          "fecha": "1813-06-20",
+          "descripcion": "Pérdida significativa para el proceso constitucional. Power (Canarias) y Mejía Lequerica (Toledo) eran figuras clave.",
+          "impacto": {"etiquetas_mundo": ["power_muerto", "mejia_muerto"]}
+        }
+      ],
+      "objetivos": ["Sobrevivir a la epidemia", "Mantener el proyecto liberal", "Prepararse para la restauración absolutista"]
     },
     {
       "acto": 5,
       "nombre": "El Fin del Sueño Liberal",
+      "descripcion": "Regreso de Fernando VII y restauración del absolutismo. El legado de Cádiz bajo amenaza.",
       "fecha_inicio": "1814-01-01",
       "fecha_fin": "1814-12-31",
       "tramos": [
-        {"tramo_id": "manana", "eventos": ["B", "E", "S1"], "peso": 0.7},
-        {"tramo_id": "tarde", "eventos": ["A", "C", "S4"], "peso": 0.9},
-        {"tramo_id": "noche", "eventos": ["C", "F", "S5"], "peso": 1.1}
+        {"tramo_id": "manana", "eventos": ["B", "E", "S1"], "peso": 0.7, "descripcion": "Tensión por el regreso del rey"},
+        {"tramo_id": "tarde", "eventos": ["A", "C", "S4"], "peso": 0.9, "descripcion": "Persecución de liberales y debates urgentes"},
+        {"tramo_id": "noche", "eventos": ["C", "F", "S5"], "peso": 1.1, "descripcion": "Huida o resistencia clandestina"}
       ],
-      "pivotes": ["manifiesto_persas_1814", "decreto_valencia_1814"]
+      "eventos_pivote": [
+        {
+          "evento_id": "fernando_vii_entra_espana_1814",
+          "nombre": "Fernando VII entra en España",
+          "fecha": "1814-03-24",
+          "descripcion": "Su itinerario hacia Valencia evita deliberadamente Cádiz. Apoyo entusiasta de sectores absolutistas.",
+          "impacto": {"etiquetas_mundo": ["fernando_vii_regresa"], "clima_politico": "represion_latente"}
+        },
+        {
+          "evento_id": "manifiesto_persas_1814",
+          "nombre": "Manifiesto de los Persas",
+          "fecha": "1814-04-12",
+          "descripcion": "69 diputados absolutistas piden a Fernando VII abolir la Constitución y restaurar el Antiguo Régimen.",
+          "impacto": {"etiquetas_mundo": ["reaccion_absolutista"], "clima_politico": "represion_latente"}
+        },
+        {
+          "evento_id": "decreto_valencia_1814",
+          "nombre": "Decreto de Valencia",
+          "fecha": "1814-05-04",
+          "descripcion": "Fernando VII declara nulas la Constitución de 1812 y toda la legislación de las Cortes de Cádiz.",
+          "impacto": {"etiquetas_mundo": ["constitucion_derogada", "absolutismo_restaurado"], "clima_politico": "represion_latente"}
+        }
+      ],
+      "objetivos": ["Sobrevivir a la represión", "Preservar el legado liberal", "Decidir el futuro (exilio, adaptación, resistencia)"]
     }
   ],
-  "climas": {
-    "normalidad_tensa": {"peso": 1.0},
-    "precrisis": {"peso": 1.1},
-    "crisis_abierta": {"peso": 1.3, "cooldown_reducido": true},
-    "resaca_crisis": {"peso": 0.9},
-    "celebracion_publica": {"peso": 0.8},
-    "represion_latente": {"peso": 0.7}
+  "climas_politicos": {
+    "normalidad_tensa": {"peso": 1.0, "descripcion": "Situación estable pero con tensión subyacente"},
+    "precrisis": {"peso": 1.1, "descripcion": "Señales de conflicto inminente", "eventos_prohibidos": ["celebracion_publica"]},
+    "crisis_abierta": {"peso": 1.3, "descripcion": "Conflicto activo, reglas normales suspendidas", "eventos_prohibidos": ["celebracion_publica"], "cooldown_reducido": true},
+    "resaca_crisis": {"peso": 0.9, "descripcion": "Tras una crisis, normalización gradual"},
+    "celebracion_publica": {"peso": 0.8, "descripcion": "Momento de triunfo o alegría colectiva", "eventos_prohibidos": ["crisis_abierta"]},
+    "represion_latente": {"peso": 0.7, "descripcion": "Control estricto, disidencia perseguida", "eventos_prohibidos": ["celebracion_publica"], "eventos_favorecidos": ["E", "S4"]}
   }
 }

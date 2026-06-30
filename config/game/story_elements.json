@@ -1,16 +1,271 @@
 {
-  "id": "PROT_001",
-  "nombre": "Diputado Liberal Gaditano",
-  "categoria": "protagonista",
-  "descripcion": "Representante de Cádiz en las Cortes...",
-  "tags": ["parlamento", "reformista", "gaditano"],
-  "facciones_afines": ["liberales_progresistas"],
-  "requisitos": {"posicion_formal_id": ["diputado", "diputado_suplente"]},
-  "peso_base": 1.0,
-  "modificadores": {"acto": {"1": 0.5, "2": 1.0, "3": 1.2}},
-  "compatibilidad": {
-    "temas": {"THEME_001": 5, "THEME_005": 5},
-    "antagonistas": {"ANT_002": 5, "ANT_003": 4},
-    "finales": {"FIN_001": 5}
-  }
-}
+  "version": "1.0",
+  "descripcion": "Catálogo completo de 50 Story Elements para Cadiz12, adaptados al lore histórico 1805-1814",
+  "categorias": {
+
+    "protagonista": {
+      "descripcion": "Actor político principal de la narrativa",
+      "elementos": [
+        {
+          "id": "PROT_001",
+          "nombre": "Diputado Liberal Gaditano",
+          "descripcion": "Representante de Cádiz en las Cortes Generales y Extraordinarias. Defensor acérrimo de la soberanía nacional y las reformas constitucionales. Tiene acceso directo al hemiciclo, comisiones parlamentarias y redes de diputados afines.",
+          "tags": ["parlamento", "reformista", "gaditano", "elocuente", "soberania_nacional"],
+          "facciones_afines": ["liberales_progresistas", "liberales_moderados"],
+          "facciones_enemigas": ["absolutistas", "iglesia_conservadora", "afrancesados"],
+          "requisitos": {
+            "posicion_formal_id": ["diputado", "diputado_suplente"],
+            "origen_geografico": ["gaditano", "peninsular"],
+            "acto_minimo": 2
+          },
+          "peso_base": 1.0,
+          "modificadores": {
+            "acto": {"1": 0.3, "2": 0.8, "3": 1.2, "4": 1.0, "5": 0.7},
+            "clima_politico": {"crisis_abierta": 1.2, "celebracion_publica": 1.5},
+            "etiquetas_mundo": {"cortes_abiertas": 1.3, "asedio_activo": 0.9}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_001": 5, "THEME_002": 4, "THEME_003": 5, "THEME_005": 5, "THEME_006": 3},
+            "antagonistas": {"ANT_001": 5, "ANT_002": 5, "ANT_003": 5, "ANT_006": 5, "ANT_010": 4},
+            "personajes_secundarios": {"SEC_001": 4, "SEC_005": 3, "SEC_008": 4},
+            "finales": {"FIN_001": 5, "FIN_006": 4, "FIN_008": 3}
+          }
+        },
+        {
+          "id": "PROT_002",
+          "nombre": "Comerciante del Consulado de Cádiz",
+          "descripcion": "Miembro de la élite mercantil gaditana con conexiones en el Consulado de Cádiz y redes comerciales transatlánticas. Domina el arte de la negociación, el trueque de favores y el manejo de información económica privilegiada. Su poder radica en el control del comercio colonial.",
+          "tags": ["comercio", "influencia", "recursos", "pragmático", "monopolio", "consulado"],
+          "facciones_afines": ["consulado", "liberales_moderados"],
+          "facciones_enemigas": ["liberales_progresistas", "faccion_americana"],
+          "requisitos": {
+            "clase_social": ["elite_mercantil_gaditana"],
+            "oficio": ["comerciante", "agente_mercantil"]
+          },
+          "peso_base": 0.9,
+          "modificadores": {
+            "acto": {"0": 1.2, "1": 1.1, "2": 1.0, "3": 0.8, "4": 0.7, "5": 0.6},
+            "etiquetas_mundo": {"prensa_libre": 0.7, "inquisicion_abolida": 0.6}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_004": 5, "THEME_008": 4, "THEME_001": 2, "THEME_009": 3},
+            "antagonistas": {"ANT_004": 5, "ANT_009": 3, "ANT_001": 2},
+            "finales": {"FIN_007": 5, "FIN_006": 3}
+          }
+        },
+        {
+          "id": "PROT_003",
+          "nombre": "Oficial de la Armada Española",
+          "descripcion": "Militar de la Armada estacionado en Cádiz. Conoce los movimientos de la flota, las estrategias navales y tiene acceso a información estratégica sobre el asedio francés. Su palabra tiene peso entre los militares y en la defensa de la ciudad.",
+          "tags": ["militar", "disciplina", "estrategia", "lealtad", "armada", "defensa"],
+          "facciones_afines": ["militares", "liberales_progresistas"],
+          "facciones_enemigas": ["afrancesados"],
+          "requisitos": {
+            "clase_social": ["carrera_militar"],
+            "oficio": ["oficial_ejercito"]
+          },
+          "peso_base": 1.1,
+          "modificadores": {
+            "acto": {"0": 0.8, "1": 0.9, "2": 1.3, "3": 1.1, "4": 1.0, "5": 0.8},
+            "clima_politico": {"crisis_abierta": 1.4, "represion_latente": 0.6},
+            "etiquetas_mundo": {"asedio_activo": 1.5, "asedio_terminado": 0.8}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_006": 5, "THEME_001": 4, "THEME_005": 3},
+            "antagonistas": {"ANT_005": 5, "ANT_007": 4, "ANT_001": 5},
+            "personajes_secundarios": {"SEC_003": 4},
+            "finales": {"FIN_004": 4, "FIN_001": 3}
+          }
+        },
+        {
+          "id": "PROT_004",
+          "nombre": "Clérigo Ilustrado",
+          "descripcion": "Sacerdote formado en las ideas de la Ilustración y el reformismo católico. Defiende la abolición de la Inquisición, la tolerancia religiosa y las reformas eclesiásticas. Tiene acceso a redes confesionales y autoridad moral ante los fieles.",
+          "tags": ["religion", "ilustrado", "moral", "persuasión", "reforma", "iglesia"],
+          "facciones_afines": ["clero_ilustrado", "liberales_progresistas"],
+          "facciones_enemigas": ["iglesia_conservadora", "absolutistas"],
+          "requisitos": {
+            "clase_social": ["clero_ilustrado"],
+            "oficio": ["clerigo"]
+          },
+          "peso_base": 1.0,
+          "modificadores": {
+            "acto": {"0": 0.7, "1": 0.8, "2": 1.0, "3": 1.2, "4": 1.5, "5": 0.9},
+            "etiquetas_mundo": {"inquisicion_abolida": 1.4, "prensa_libre": 1.1}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_003": 5, "THEME_002": 4, "THEME_001": 4, "THEME_007": 3},
+            "antagonistas": {"ANT_002": 5, "ANT_006": 5, "ANT_003": 4},
+            "personajes_secundarios": {"SEC_005": 5, "SEC_002": 2},
+            "finales": {"FIN_001": 4, "FIN_008": 5}
+          }
+        },
+        {
+          "id": "PROT_005",
+          "nombre": "Periodista Patriota",
+          "descripcion": "Redactor de uno de los nuevos periódicos gaditanos que florecen tras el Decreto de Libertad de Imprenta (nov 1810). Domina el arte de la palabra escrita, la manipulación de la opinión pública y tiene acceso a información de primera mano. Su pluma puede influir en el clima político.",
+          "tags": ["prensa", "informacion", "opinion", "influencia", "libertad", "publicista"],
+          "facciones_afines": ["liberales_progresistas", "prensa"],
+          "facciones_enemigas": ["iglesia_conservadora", "absolutistas"],
+          "requisitos": {
+            "oficio": ["periodista", "publicista"],
+            "etiquetas_mundo": ["prensa_libre"]
+          },
+          "peso_base": 0.8,
+          "modificadores": {
+            "acto": {"0": 0.0, "1": 0.0, "2": 1.0, "3": 1.2, "4": 1.1, "5": 0.9},
+            "etiquetas_mundo": {"prensa_libre": 1.5}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_002": 5, "THEME_001": 4, "THEME_007": 4},
+            "antagonistas": {"ANT_002": 4, "ANT_006": 4, "ANT_003": 3},
+            "personajes_secundarios": {"SEC_001": 5, "SEC_009": 4},
+            "finales": {"FIN_002": 4, "FIN_006": 3}
+          }
+        },
+        {
+          "id": "PROT_006",
+          "nombre": "Abogado Constitucionalista",
+          "descripcion": "Jurista especializado en derecho constitucional y parlamentario. Participa activamente en la redacción de la Constitución de 1812. Capaz de analizar borradores con precisión técnica, argumentar procedimientos y forzar aplazamientos en comisión.",
+          "tags": ["legal", "tecnica", "debate", "procedimiento", "constitucion", "jurista"],
+          "facciones_afines": ["liberales_progresistas", "liberales_moderados"],
+          "requisitos": {
+            "oficio": ["jurista", "abogado"]
+          },
+          "peso_base": 0.9,
+          "modificadores": {
+            "acto": {"0": 0.5, "1": 0.6, "2": 0.9, "3": 1.4, "4": 1.2, "5": 1.0}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_005": 5, "THEME_001": 5, "THEME_003": 4},
+            "antagonistas": {"ANT_003": 4, "ANT_010": 4},
+            "personajes_secundarios": {"SEC_008": 4},
+            "finales": {"FIN_001": 5, "FIN_006": 4}
+          }
+        },
+        {
+          "id": "PROT_007",
+          "nombre": "Militar Veterano de Bailén",
+          "descripcion": "Soldado que combatió en la Batalla de Bailén (19 jul 1808), donde los españoles infligieron la primera gran derrota a las tropas napoleónicas. Héroe popular entre el ejército y el pueblo. Sabe por experiencia que los franceses no son invencibles.",
+          "tags": ["heroico", "experiencia", "liderazgo", "resistencia", "veterano", "bailen"],
+          "facciones_afines": ["militares", "liberales_progresistas"],
+          "facciones_enemigas": ["afrancesados"],
+          "requisitos": {
+            "etiquetas_protagonista": ["veterano_bailen"]
+          },
+          "peso_base": 1.2,
+          "modificadores": {
+            "acto": {"0": 0.0, "1": 1.3, "2": 1.4, "3": 1.2, "4": 1.1, "5": 0.9},
+            "etiquetas_mundo": {"asedio_activo": 1.3}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_006": 5, "THEME_001": 4},
+            "antagonistas": {"ANT_005": 5, "ANT_001": 5},
+            "personajes_secundarios": {"SEC_003": 5},
+            "finales": {"FIN_004": 4, "FIN_001": 3}
+          }
+        },
+        {
+          "id": "PROT_008",
+          "nombre": "Noble Reformista",
+          "descripcion": "Aristócrata gaditano que ha abrazado las ideas liberales. Usa su posición social, conexiones y recursos para impulsar cambios desde dentro del sistema. Su situación genera tensiones: es respeto por su linaje pero sospechoso por sus ideas.",
+          "tags": ["nobleza", "conexiones", "influencia", "contradiccion", "reformista", "elite"],
+          "facciones_afines": ["liberales_moderados"],
+          "facciones_enemigas": ["absolutistas"],
+          "requisitos": {
+            "clase_social": ["hidalguia", "elite_mercantil_gaditana"]
+          },
+          "peso_base": 0.7,
+          "modificadores": {
+            "acto": {"0": 0.8, "1": 0.9, "2": 1.0, "3": 1.1, "4": 1.0, "5": 0.8}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_001": 3, "THEME_005": 4, "THEME_008": 2},
+            "antagonistas": {"ANT_003": 5, "ANT_008": 4},
+            "personajes_secundarios": {"SEC_002": 4},
+            "finales": {"FIN_006": 5, "FIN_002": 3}
+          }
+        },
+        {
+          "id": "PROT_009",
+          "nombre": "Americano Criollo",
+          "descripcion": "Diputado o representante de las colonias americanas en las Cortes de Cádiz. Lucha por la igualdad de derechos entre peninsulares y americanos. Portador de la tensión fundamental entre reformar el imperio o independizar las colonias. Su presencia genera debate y controversia.",
+          "tags": ["americano", "colonial", "igualdad", "tension", "criollo", "independencia"],
+          "facciones_afines": ["faccion_americana", "liberales_progresistas"],
+          "facciones_enemigas": ["consulado"],
+          "requisitos": {
+            "origen_geografico": ["americano_virreinal"],
+            "adscripcion_politica": ["americanista"]
+          },
+          "peso_base": 1.0,
+          "modificadores": {
+            "acto": {"0": 0.0, "1": 0.0, "2": 1.2, "3": 1.3, "4": 1.1, "5": 0.9},
+            "etiquetas_mundo": {"cortes_abiertas": 1.2}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_009": 5, "THEME_001": 3, "THEME_004": 4},
+            "antagonistas": {"ANT_004": 4, "ANT_003": 3},
+            "personajes_secundarios": {"SEC_006": 5},
+            "finales": {"FIN_003": 5, "FIN_010": 3}
+          }
+        },
+        {
+          "id": "PROT_010",
+          "nombre": "Espía Británico en Cádiz",
+          "descripcion": "Agente de inteligencia británico infiltrado en Cádiz. Proporciona información valiosa sobre movimientos franceses, aliados y estrategias militares. Su lealtad es ambigua: puede ser un aliado útil o un riesgo de traición. Conoce secretos que podrían comprometer al protagonista.",
+          "tags": ["espionaje", "informacion", "riesgo", "doble_juego", "britanico", "clandestino"],
+          "facciones_afines": ["aliados_britanicos"],
+          "facciones_enemigas": ["afrancesados", "absolutistas"],
+          "peso_base": 0.6,
+          "modificadores": {
+            "acto": {"0": 0.7, "1": 0.8, "2": 1.0, "3": 0.9, "4": 0.8, "5": 1.1},
+            "clima_politico": {"crisis_abierta": 1.3, "represion_latente": 0.8}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_006": 4, "THEME_007": 5},
+            "antagonistas": {"ANT_005": 4, "ANT_007": 5},
+            "personajes_secundarios": {"SEC_007": 4},
+            "finales": {"FIN_009": 5, "FIN_005": 4}
+          }
+        }
+      ]
+    },
+
+    "antagonista": {
+      "descripcion": "Fuerza o persona que se opone activamente al protagonista",
+      "elementos": [
+        {
+          "id": "ANT_001",
+          "nombre": "Afrancesado Colaboracionista",
+          "descripcion": "Gaditano o español que colabora abiertamente con los franceses. Ve en Napoleón y José I la modernización que España necesita. Odia a los patriotas y busca activamente sabotear la resistencia gaditana. Puede ser un comercial, un militar o un funcionario.",
+          "tags": ["traicion", "modernizacion", "division", "odio", "colaboracion", "frances"],
+          "facciones_afines": ["afrancesados"],
+          "facciones_enemigas": ["liberales_progresistas", "liberales_moderados", "militares", "pueblo"],
+          "peso_base": 1.0,
+          "modificadores": {
+            "acto": {"0": 0.5, "1": 0.8, "2": 1.2, "3": 1.0, "4": 0.9, "5": 0.5},
+            "etiquetas_mundo": {"asedio_activo": 1.2, "jose_i_nombrado": 1.3}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_001": 1, "THEME_006": 1, "THEME_007": 4},
+            "protagonistas": {"PROT_001": 1, "PROT_003": 1, "PROT_004": 1, "PROT_007": 1, "PROT_010": 3},
+            "finales": {"FIN_005": 5, "FIN_002": 4}
+          }
+        },
+        {
+          "id": "ANT_002",
+          "nombre": "Inquisidor Fanático",
+          "descripcion": "Miembro del Tribunal de la Inquisición. Defiende el Antiguo Régimen, la ortodoxia católica y la represión de cualquier idea liberal o reformista con fanatismo religioso. Usa su autoridad para perseguir, delatar y castigar a los disidentes.",
+          "tags": ["fanatismo", "represion", "dogma", "miedo", "inquisicion", "conservador"],
+          "facciones_afines": ["iglesia_conservadora", "absolutistas"],
+          "facciones_enemigas": ["liberales_progresistas", "clero_ilustrado", "prensa"],
+          "peso_base": 0.9,
+          "modificadores": {
+            "acto": {"0": 1.0, "1": 1.0, "2": 1.0, "3": 0.5, "4": 0.0, "5": 0.0},
+            "etiquetas_mundo": {"inquisicion_abolida": 0.0}
+          },
+          "compatibilidad": {
+            "temas": {"THEME_003": 1, "THEME_002": 1, "THEME_001": 1},
+            "protagonistas": {"PROT_004": 1, "PROT_005": 1, "PROT_006": 1},
+            "personajes_secundarios": {"SEC_005": 1, "SEC_006": 2},
+            "finales": {"FIN_005": 4, "FIN_002": 3}
