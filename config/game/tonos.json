@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "parametros": {
+    "estilo": {"tipo": "enum", "valores": ["dramatico", "historico", "satirico", "intimo", "epico"]},
+    "ritmo": {"tipo": "enum", "valores": ["lento", "equilibrado", "frenetico"]},
+    "enfoque": {"tipo": "enum", "valores": ["politico", "personal", "social", "militar"]},
+    "moralidad": {"tipo": "enum", "valores": ["maniqueo", "ambiguo", "cinico"]},
+    "lenguaje": {"tipo": "enum", "valores": ["formal", "coloquial", "literario", "periodistico"]},
+    "violencia": {"tipo": "rango", "min": 0, "max": 5},
+    "romance": {"tipo": "rango", "min": 0, "max": 5},
+    "realismo": {"tipo": "rango", "min": 0, "max": 5}
+  },
+  "tonos_por_acto": {
+    "acto_1": {"estilo": ["historico", "dramatico"], "ritmo": "lento", "realismo_min": 3},
+    "acto_2": {"estilo": ["dramatico", "epico"], "ritmo": "equilibrado", "realismo_min": 3},
+    "acto_3": {"estilo": ["historico", "dramatico"], "ritmo": "frenetico", "realismo_min": 4},
+    "acto_4": {"estilo": ["epico", "dramatico"], "ritmo": "frenetico", "realismo_min": 4},
+    "acto_5": {"estilo": ["cinico", "dramatico"], "ritmo": "lento", "realismo_min": 3}
+  }
+}

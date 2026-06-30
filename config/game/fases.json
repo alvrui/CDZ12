@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "actos": [
+    {
+      "acto": 1,
+      "nombre": "Llegada a Cádiz",
+      "fecha_inicio": "1810-01-01",
+      "fecha_fin": "1810-09-23",
+      "tramos": [
+        {"tramo_id": "manana", "eventos": ["B", "S1", "S5"], "peso": 0.8},
+        {"tramo_id": "tarde", "eventos": ["B", "C", "S2"], "peso": 1.0},
+        {"tramo_id": "noche", "eventos": ["C", "F", "S4"], "peso": 0.6},
+        {"tramo_id": "sesion_cortes", "eventos": ["A", "S3"], "peso": 1.2, "requiere": ["diputado"]}
+      ]
+    },
+    {
+      "acto": 2,
+      "nombre": "El Asedio y los Primeros Debates",
+      "fecha_inicio": "1810-09-24",
+      "fecha_fin": "1811-12-31",
+      "tramos": [
+        {"tramo_id": "manana", "eventos": ["B", "D", "E", "S1"], "peso": 0.9},
+        {"tramo_id": "tarde", "eventos": ["A", "B", "C", "S2", "S3"], "peso": 1.1},
+        {"tramo_id": "noche", "eventos": ["C", "F", "S4", "S5"], "peso": 0.7},
+        {"tramo_id": "sesion_cortes", "eventos": ["A", "S3"], "peso": 1.3}
+      ],
+      "pivotes": ["inicio_asedio_1810", "apertura_cortes_1810", "libertad_imprenta_1810"]
+    },
+    {
+      "acto": 3,
+      "nombre": "La Constitución de 1812",
+      "fecha_inicio": "1812-01-01",
+      "fecha_fin": "1812-08-31",
+      "tramos": [
+        {"tramo_id": "manana", "eventos": ["A", "D", "S2"], "peso": 1.0},
+        {"tramo_id": "tarde", "eventos": ["A", "B", "S3"], "peso": 1.2},
+        {"tramo_id": "noche", "eventos": ["C", "F"], "peso": 0.8},
+        {"tramo_id": "sesion_cortes", "eventos": ["A", "S3"], "peso": 1.5}
+      ],
+      "pivotes": ["promulgacion_pepa_1812", "levantamiento_asedio_1812"]
+    },
+    {
+      "acto": 4,
+      "nombre": "La Epidemia y la Reacción",
+      "fecha_inicio": "1813-01-01",
+      "fecha_fin": "1813-12-31",
+      "tramos": [
+        {"tramo_id": "manana", "eventos": ["B", "D", "S1"], "peso": 0.8},
+        {"tramo_id": "tarde", "eventos": ["A", "E", "S2"], "peso": 1.0},
+        {"tramo_id": "noche", "eventos": ["C", "F", "S4"], "peso": 0.9}
+      ],
+      "pivotes": ["epidemia_fiebre_amarilla_1813", "abolicion_inquisicion_1813"]
+    },
+    {
+      "acto": 5,
+      "nombre": "El Fin del Sueño Liberal",
+      "fecha_inicio": "1814-01-01",
+      "fecha_fin": "1814-12-31",
+      "tramos": [
+        {"tramo_id": "manana", "eventos": ["B", "E", "S1"], "peso": 0.7},
+        {"tramo_id": "tarde", "eventos": ["A", "C", "S4"], "peso": 0.9},
+        {"tramo_id": "noche", "eventos": ["C", "F", "S5"], "peso": 1.1}
+      ],
+      "pivotes": ["manifiesto_persas_1814", "decreto_valencia_1814"]
+    }
+  ],
+  "climas": {
+    "normalidad_tensa": {"peso": 1.0},
+    "precrisis": {"peso": 1.1},
+    "crisis_abierta": {"peso": 1.3, "cooldown_reducido": true},
+    "resaca_crisis": {"peso": 0.9},
+    "celebracion_publica": {"peso": 0.8},
+    "represion_latente": {"peso": 0.7}
+  }
+}

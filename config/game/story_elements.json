@@ -1,0 +1,16 @@
+{
+  "id": "PROT_001",
+  "nombre": "Diputado Liberal Gaditano",
+  "categoria": "protagonista",
+  "descripcion": "Representante de Cádiz en las Cortes...",
+  "tags": ["parlamento", "reformista", "gaditano"],
+  "facciones_afines": ["liberales_progresistas"],
+  "requisitos": {"posicion_formal_id": ["diputado", "diputado_suplente"]},
+  "peso_base": 1.0,
+  "modificadores": {"acto": {"1": 0.5, "2": 1.0, "3": 1.2}},
+  "compatibilidad": {
+    "temas": {"THEME_001": 5, "THEME_005": 5},
+    "antagonistas": {"ANT_002": 5, "ANT_003": 4},
+    "finales": {"FIN_001": 5}
+  }
+}
