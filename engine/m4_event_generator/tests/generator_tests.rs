@@ -1,5 +1,5 @@
 use m4_event_generator::{Condition, Effect, Event, EventContext, EventGenerator, EventId, EventPool, EventType};
-use std::collections::HashMap;
+use serde_json::Value;
 
 #[cfg(test)]
 mod tests {
@@ -9,25 +9,26 @@ mod tests {
         let mut pool = EventPool::new();
 
         // Evento siempre disponible
-        let mut event1 = Event::new(
+        let event1 = Event::new(
             EventId::new("event_1".to_string()),
             "Always Available".to_string(),
             EventType::Simple,
             "Always triggers".to_string(),
-            vec![Condition::new("always_true".to_string(), HashMap::new())],
+            vec![Condition::AlwaysTrue],
             vec![],
             1.0,
         );
 
         // Evento condicional
-        let mut condition = HashMap::new();
-        condition.insert("key".to_string(), "required_value".to_string());
-        let mut event2 = Event::new(
+        let event2 = Event::new(
             EventId::new("event_2".to_string()),
             "Conditional".to_string(),
             EventType::Conditional,
             "Requires state".to_string(),
-            vec![Condition::new("state_equals".to_string(), condition)],
+            vec![Condition::StateEquals {
+                key: "key".to_string(),
+                value: "required_value".to_string(),
+            }],
             vec![],
             2.0,
         );
@@ -69,7 +70,7 @@ mod tests {
         let generator = EventGenerator::new(pool);
 
         let mut context = EventContext::new();
-        context.set("key".to_string(), "required_value".to_string());
+        context.set_path("key", Value::String("required_value".to_string())).unwrap();
 
         let result = generator.generate_event(&context);
         assert!(result.is_ok());
@@ -85,7 +86,7 @@ mod tests {
         let generator = EventGenerator::new(pool);
 
         let mut context = EventContext::new();
-        context.set("key".to_string(), "required_value".to_string());
+        context.set_path("key", Value::String("required_value".to_string())).unwrap();
 
         let result = generator.generate_all_events(&context);
         assert!(result.is_ok());
