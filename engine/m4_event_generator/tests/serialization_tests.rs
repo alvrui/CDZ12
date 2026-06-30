@@ -1,5 +1,5 @@
 use m4_event_generator::{Condition, Effect, Event, EventId, EventPool, EventType};
-use std::collections::HashMap;
+use serde_json::Value;
 
 #[cfg(test)]
 mod tests {
@@ -8,17 +8,14 @@ mod tests {
     fn create_test_pool() -> EventPool {
         let mut pool = EventPool::new();
 
-        let mut conditions = Vec::new();
-        conditions.push(Condition::new("always_true".to_string(), HashMap::new()));
+        let conditions = vec![Condition::AlwaysTrue];
 
-        let mut effects = Vec::new();
-        effects.push(Effect::new(
-            "set_state".to_string(),
-            [("key".to_string(), "value".to_string())]
-                .iter()
-                .cloned()
-                .collect(),
-        ));
+        let effects = vec![Effect {
+            action: "set_flag".to_string(),
+            target: "key".to_string(),
+            value: Some(Value::Bool(true)),
+            delta: None,
+        }];
 
         let event = Event::new(
             EventId::new("event_1".to_string()),
