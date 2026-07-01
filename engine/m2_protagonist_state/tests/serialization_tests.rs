@@ -1,11 +1,11 @@
-use m2_protagonist_state::models::{Attributes, Inventory, InventoryItem, Objective, Objectives, Protagonist, ProtagonistId, Relationships};
+use m2_protagonist_state::models::{Inventory, InventoryItem, Medidores, Objective, Objectives, Perfil, Protagonist, ProtagonistId, Relationships, Tendencia};
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     fn create_sample_protagonist() -> Protagonist {
-        let attributes = Attributes::new(50, 30, 20);
+        let medidores = Medidores::new(50, 30, 20, 40, 60, 80, Tendencia::new(0));
         let mut inventory = Inventory::new();
         inventory.add_item(
             "item_1".to_string(),
@@ -13,7 +13,7 @@ mod tests {
         );
 
         let mut relationships = Relationships::new();
-        relationships.add_relationship("faction_1".to_string(), 50);
+        relationships.add_faction_relationship("faction_1".to_string(), 50);
 
         let mut objectives = Objectives::new();
         objectives.add_objective(
@@ -21,14 +21,23 @@ mod tests {
             Objective::new("Complete mission".to_string()),
         );
 
+        let perfil = Perfil::new(
+            "Liberales".to_string(),
+            "Burguesia".to_string(),
+            "Comerciante".to_string(),
+            "Constitucionalista".to_string(),
+        );
+
         Protagonist::new(
             ProtagonistId::new("protagonist_1".to_string()),
             "Test Protagonist".to_string(),
-            attributes,
+            medidores,
             inventory,
             relationships,
             objectives,
             "normal".to_string(),
+            perfil,
+            vec!["test".to_string()],
         )
     }
 
