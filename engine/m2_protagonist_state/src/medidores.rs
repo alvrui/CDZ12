@@ -10,8 +10,8 @@ impl Medidores {
         if new_val < Self::MIN_VALUE as i16 || new_val > Self::MAX_VALUE as i16 {
             return Err(ProtagonistError::AttributeOutOfBounds(
                 "fuerza".to_string(),
-                Self::MIN_VALUE,
-                Self::MAX_VALUE,
+                Self::MIN_VALUE as i32,
+                Self::MAX_VALUE as i32,
             ));
         }
         self.fuerza = new_val as u8;
@@ -27,8 +27,8 @@ impl Medidores {
         if new_val < Self::MIN_VALUE as i16 || new_val > Self::MAX_VALUE as i16 {
             return Err(ProtagonistError::AttributeOutOfBounds(
                 "influencia".to_string(),
-                Self::MIN_VALUE,
-                Self::MAX_VALUE,
+                Self::MIN_VALUE as i32,
+                Self::MAX_VALUE as i32,
             ));
         }
         self.influencia = new_val as u8;
@@ -44,8 +44,8 @@ impl Medidores {
         if new_val < Self::MIN_VALUE as i16 || new_val > Self::MAX_VALUE as i16 {
             return Err(ProtagonistError::AttributeOutOfBounds(
                 "recursos".to_string(),
-                Self::MIN_VALUE,
-                Self::MAX_VALUE,
+                Self::MIN_VALUE as i32,
+                Self::MAX_VALUE as i32,
             ));
         }
         self.recursos = new_val as u8;
@@ -61,8 +61,8 @@ impl Medidores {
         if new_val < Self::MIN_VALUE as i16 || new_val > Self::MAX_VALUE as i16 {
             return Err(ProtagonistError::AttributeOutOfBounds(
                 "reputacion".to_string(),
-                Self::MIN_VALUE,
-                Self::MAX_VALUE,
+                Self::MIN_VALUE as i32,
+                Self::MAX_VALUE as i32,
             ));
         }
         self.reputacion = new_val as u8;
@@ -78,8 +78,8 @@ impl Medidores {
         if new_val < Self::MIN_VALUE as i16 || new_val > Self::MAX_VALUE as i16 {
             return Err(ProtagonistError::AttributeOutOfBounds(
                 "lealtad".to_string(),
-                Self::MIN_VALUE,
-                Self::MAX_VALUE,
+                Self::MIN_VALUE as i32,
+                Self::MAX_VALUE as i32,
             ));
         }
         self.lealtad = new_val as u8;
@@ -95,8 +95,8 @@ impl Medidores {
         if new_val < Self::MIN_VALUE as i16 || new_val > Self::MAX_VALUE as i16 {
             return Err(ProtagonistError::AttributeOutOfBounds(
                 "salud".to_string(),
-                Self::MIN_VALUE,
-                Self::MAX_VALUE,
+                Self::MIN_VALUE as i32,
+                Self::MAX_VALUE as i32,
             ));
         }
         self.salud = new_val as u8;
