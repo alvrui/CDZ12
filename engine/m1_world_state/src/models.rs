@@ -9,6 +9,21 @@ use crate::{
     visibility::{Visibility, VisibilityLevel},
 };
 
+/// Clima político del mundo
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub enum ClimaPolitico {
+    Calma,
+    Tension,
+    Crisis,
+    Revolucion,
+}
+
+impl Default for ClimaPolitico {
+    fn default() -> Self {
+        Self::Calma
+    }
+}
+
 /// Estado completo del mundo de juego
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct WorldState {
@@ -32,6 +47,15 @@ pub struct WorldState {
 
     /// Historial de crisis resueltas
     resolved_crises: Vec<Crisis>,
+
+    /// Clima político actual
+    clima_politico: ClimaPolitico,
+
+    /// Etiquetas del mundo para selección de Story Elements
+    etiquetas_mundo: Vec<String>,
+
+    /// Eventos históricos ocurridos (para contexto narrativo)
+    eventos_historicos_ocurridos: Vec<String>,
 }
 
 impl WorldState {
@@ -45,6 +69,9 @@ impl WorldState {
             spaces: Vec::new(),
             active_crisis: None,
             resolved_crises: Vec::new(),
+            clima_politico: ClimaPolitico::default(),
+            etiquetas_mundo: Vec::new(),
+            eventos_historicos_ocurridos: Vec::new(),
         }
     }
 
@@ -158,6 +185,36 @@ impl WorldState {
         self.resolved_crises.push(crisis);
     }
 
+    /// Obtiene el clima político
+    pub fn clima_politico(&self) -> &ClimaPolitico {
+        &self.clima_politico
+    }
+
+    /// Establece el clima político
+    pub fn set_clima_politico(&mut self, clima: ClimaPolitico) {
+        self.clima_politico = clima;
+    }
+
+    /// Obtiene las etiquetas del mundo
+    pub fn etiquetas_mundo(&self) -> &[String] {
+        &self.etiquetas_mundo
+    }
+
+    /// Establece las etiquetas del mundo
+    pub fn set_etiquetas_mundo(&mut self, etiquetas: Vec<String>) {
+        self.etiquetas_mundo = etiquetas;
+    }
+
+    /// Obtiene los eventos históricos ocurridos
+    pub fn eventos_historicos_ocurridos(&self) -> &[String] {
+        &self.eventos_historicos_ocurridos
+    }
+
+    /// Anade un evento histórico ocurrido
+    pub fn add_evento_historico(&mut self, evento: String) {
+        self.eventos_historicos_ocurridos.push(evento);
+    }
+
     /// Aplica los efectos de la crisis activa
     pub fn apply_crisis_effects(&mut self) {
         if let Some(crisis) = self.active_crisis.clone() {
@@ -220,6 +277,9 @@ impl WorldState {
             spaces: Vec::new(),
             active_crisis: None,
             resolved_crises: Vec::new(),
+            clima_politico: ClimaPolitico::default(),
+            etiquetas_mundo: Vec::new(),
+            eventos_historicos_ocurridos: Vec::new(),
         }
     }
 }
