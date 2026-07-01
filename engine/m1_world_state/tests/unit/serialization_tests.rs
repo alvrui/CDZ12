@@ -16,7 +16,7 @@ mod tests {
 
     #[test]
     fn test_deserialize_from_json() {
-        let json = r#"{"time":{"tramo_id":1,"acto":"Prologo","jornada_absoluta":0},"polarization":{"value":0,"trend":0},"visibility":{"global_level":"Hidden","space_visibilities":{},"faction_visibilities":{}},"factions":[],"spaces":[],"active_crisis":null,"resolved_crises":[]}"#;
+        let json = r#"{"time":{"tramo_id":1,"acto":"Prologo","jornada_absoluta":0},"polarization":{"value":0,"trend":0},"visibility":{"global_level":"Hidden","space_visibilities":{},"faction_visibilities":{}},"factions":[],"spaces":[],"active_crisis":null,"resolved_crises":[],"clima_politico":"Calma","etiquetas_mundo":[],"eventos_historicos_ocurridos":[]}"#;
         let world: WorldState = WorldState::deserialize(json.as_bytes(), SerializationFormat::Json).unwrap();
         assert_eq!(world.time().jornada_absoluta(), 0);
     }
@@ -30,7 +30,26 @@ mod tests {
 
     #[test]
     fn test_deserialize_from_yaml() {
-        let yaml = "---\ntime:\n  tramo_id: 1\n  acto: Prologo\n  jornada_absoluta: 0\npolarization:\n  value: 0\n  trend: 0\nvisibility:\n  global_level: Hidden\n  space_visibilities: {}\n  faction_visibilities: {}\nfactions: []\nspaces: []\nactive_crisis: ~\nresolved_crises: []\n";
+        let yaml = "---
+time:
+  tramo_id: 1
+  acto: Prologo
+  jornada_absoluta: 0
+polarization:
+  value: 0
+  trend: 0
+visibility:
+  global_level: Hidden
+  space_visibilities: {}
+  faction_visibilities: {}
+factions: []
+spaces: []
+active_crisis: ~
+resolved_crises: []
+clima_politico: Calma
+etiquetas_mundo: []
+eventos_historicos_ocurridos: []
+";
         let world: WorldState = WorldState::deserialize(yaml.as_bytes(), SerializationFormat::Yaml).unwrap();
         assert_eq!(world.time().jornada_absoluta(), 0);
     }
