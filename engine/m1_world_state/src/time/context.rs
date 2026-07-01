@@ -10,6 +10,8 @@ pub enum ActoNarrativo {
     ActoI,
     ActoII,
     ActoIII,
+    ActoIV,
+    ActoV,
     Epilogo,
 }
 
@@ -20,6 +22,8 @@ impl fmt::Display for ActoNarrativo {
             ActoNarrativo::ActoI => write!(f, "ActoI"),
             ActoNarrativo::ActoII => write!(f, "ActoII"),
             ActoNarrativo::ActoIII => write!(f, "ActoIII"),
+            ActoNarrativo::ActoIV => write!(f, "ActoIV"),
+            ActoNarrativo::ActoV => write!(f, "ActoV"),
             ActoNarrativo::Epilogo => write!(f, "Epilogo"),
         }
     }
